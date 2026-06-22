@@ -17,7 +17,7 @@ for word, score in model.most_similar("computer", topn=5):
 plt.figure(figsize=(8, 6))
 for word, coord in zip(words, reduced):
     plt.scatter(coord[0], coord[1])
-    plt.annotate(word, coord)
+    plt.text(coord[0], coord[1], word)
 
 plt.title("PCA Visualization of Technology Word Embeddings")
 plt.xlabel("PC1")

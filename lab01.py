@@ -12,8 +12,8 @@ for word, similarity in model.most_similar("king"):
     print(f"{word}: {similarity:.4f}")
 
 print("Analogy: 'king' + 'woman' - 'man' ≈ ?")
-result = model.most_similar(positive=["king", "woman"], negative=["man"], topn=1)
-print(f"Result: {result[0][0]} (Similarity: {result[0][1]:.4f})")
+for word, sim in model.most_similar(positive=["king", "woman"], negative=["man"], topn=1):
+    print(f"{word} (Similarity: {sim:.4f})")
 
 print("Analogy: 'paris' + 'italy' - 'france' ≈ ?\n")
 for word, similarity in model.most_similar(positive=["paris", "italy"], negative=["france"]):
